@@ -14,6 +14,8 @@ results = {
 
 
 
+##--------------------------question_function(name) function--------------------------------##
+
 def question_function(name):
  """This function serves as a dictionary + loop. The parameter will be replaced by a key in the questions dictionary
  and its value will be printed. A loop will then check the conditions to return a string and enter the responses into a new dictionary"""
@@ -62,43 +64,29 @@ def drink_function():
  drink=[] #This will hold the random ingredients
  num = 0 #This will count how many prints we do to stop an error
  
- if results["strong"] == True :
-  num += 1
-  drink.append(random.choice(ingredients["strong"]))
- 
- if results["salty"] == True :
-  num += 1
-  drink.append(random.choice(ingredients["salty"]))
-  
- if results["bitter"] == True :
-  num += 1
-  drink.append(random.choice(ingredients["bitter"]))
-
- if results["sweet"] == True :
-  num += 1
-  drink.append(random.choice(ingredients["sweet"]))
-
- if results["fruity"] == True :
-  num += 1
-  drink.append(random.choice(ingredients["fruity"]))
-  
+ for result in results:
+    if results[result] == True:
+     num += 1
+     drink.append(random.choice(ingredients[result]))
+    
+    
  if num == 0:
   print("Well you are a picky one aren't cha? Go drink somewhere else!")
   
  elif num == 1:
-  print("The bartender grabs a " + drink[0] + " and mixes it all up!")
+  print("The bartender grabs a " + drink[0] + " and pours it into a glass!")
   
  elif num == 2:
-  print("The bartender grabs a " + drink[0] + ', and a '  + drink[1] + " then mixes it all up!")
+  print("The bartender grabs a " + drink[0] + ', a '  + drink[1] + " then mixes it all up!")
  
  elif num == 3:
-  print("The bartender grabs a " + drink[0] + ', a '  + drink[1] + ', and a ' + drink[2] + " then mixes it all up!")
+  print("The bartender grabs a " + drink[0] + ', a '  + drink[1] + ', and a ' + drink[2] + ", then mixes it all up!")
   
  elif num == 4:
-  print("The bartender grabs a " + drink[0] + ', a '  + drink[1] + ', a ' + drink[2] + ', and a ' + drink[3] + " then mixes it all up!")
+  print("The bartender grabs a " + drink[0] + ', a '  + drink[1] + ', a ' + drink[2] + ', and a ' + drink[3] + ", then mixes it all up!")
 
  elif num == 5:
-  print("The bartender grabs a " + drink[0] + ', a '  + drink[1] + ', a ' + drink[2] + ', a ' + drink[3] + ', and a ' + drink[4] + " then mixes it all up!")
+  print("The bartender grabs a " + drink[0] + ', a '  + drink[1] + ', a ' + drink[2] + ', a ' + drink[3] + ', and a ' + drink[4] + ", then mixes it all up!")
 
 
 
